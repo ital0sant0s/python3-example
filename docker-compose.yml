@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  example:
+    container_name: python3-example
+    image: python3-example
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      cache_from:
+        - python:3-alpine
+    ports:
+      - "5000:5000"
